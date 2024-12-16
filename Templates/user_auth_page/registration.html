@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .split {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 0 10px; /* Gap between sections */
+        }
+
+        .left-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            overflow: hidden;
+            background-image: url('registration.jpeg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .right-section {
+            width: 50%;
+            background-color: #9FE6FF; /* Apply the color here */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .registration-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px; /* General border radius for other corners */
+    border-bottom-right-radius: 107px;
+    border-top-left-radius:107px; /* Curve for the bottom-right corner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 120px; /* Adjust the logo size */
+            height: auto;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row .form-group {
+            width: 48%; /* Ensures both fields take up half the width of the row */
+        }
+
+        .form-control {
+            border-radius: 15px;
+        }
+
+        .btn-custom {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            background-color: #b2dffb;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0786b8; /* Sky blue */
+            color: #fff;
+        }
+
+        .btn-custom:active {
+            background-color: #018808; /* Slightly darker blue */
+            transform: scale(0.98); /* Shrink effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="split">
+        <!-- Left section for the background image -->
+        <div class="left-section">
+            <!-- You can add any content here, the image will be displayed in the background -->
+        </div>
+
+        <!-- Right section for the registration form -->
+        <div class="right-section">
+            <div class="registration-container">
+                <!-- Logo above the form -->
+                <img src="घर_SEWA-removebg-preview (1).png" alt="Logo" class="logo"> <!-- Replace with your logo image -->
+
+                <h2>Customer Registration</h2>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <!-- CSRF Token (If using Django, include it) -->
+                    <!-- {% csrf_token %} -->
+
+                    <!-- Row for First Name and Last Name -->
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+
+                    <!-- Row for Email and Phone -->
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+
+                    <!-- Row for Username and Profile Picture -->
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile_picture" class="form-label">Profile Picture</label>
+                            <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept="image/*" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-custom">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
