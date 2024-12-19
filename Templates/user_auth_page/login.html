@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+            overflow: hidden; /* Prevents scrollbars during animation */
+        }
+        .split {
+            display: flex;
+            height: 100%;
+        }
+        .left-section {
+            background-image: url("{% static 'images/Technician.jpg' %}"); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 50%;
+            border-radius: 20px;
+            transform: translateY(-100%); /* Start above the viewport */
+            animation: slideDown 1.5s ease-in-out forwards; /* Slide-in animation */
+        }
+
+        .right-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            background-color: #9FE6FF;
+            transform: translateX(100%); /* Start off-screen to the right */
+            animation: slideInFromRight 1.5s ease-in-out forwards; /* Slide-in animation */
+            animation-delay: 0.2s; /* Delay for staggered effect */
+        }
+
+        @keyframes slideInFromLeft {
+            to {
+                transform: translateX(0); /* Final position */
+            }
+        }
+
+        @keyframes slideInFromRight {
+            to {
+                transform: translateX(0); /* Final position */
+            }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            border-bottom-right-radius: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transform: translateX(50px);
+            opacity: 0;
+            animation: fadeInFromRight 1.5s ease-in-out forwards;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInFromRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .login-container .logo img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 15px;
+        }
+
+        .btn-custom {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            background-color: #b2dffb;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0786b8;
+            color: #fff;
+        }
+
+        .btn-custom:active {
+            background-color: #018808;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="split">
+        <!-- Left section for image -->
+        <div class="left-section"></div>
+
+        <!-- Right section for the login form -->
+        <div class="right-section">
+            <div class="login-container">
+                <div class="text-center logo">
+                    <img src="{% static 'logo/logo.png' %}" alt="Website Logo">
+                </div>
+                <h2>Login</h2>
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Login</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p class="text-muted">Don't have an account? <a href="{% url 'login' %}" class="text-primary">Sign up here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

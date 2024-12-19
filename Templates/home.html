@@ -112,8 +112,8 @@ h1::before {
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">All Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Combo Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Join Network</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Bookings</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
                 <!-- Search Bar -->
@@ -124,12 +124,12 @@ h1::before {
                 <!-- Login/Sign Up with User Icons -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{%url 'login'%}">
                             <i class="bi bi-person"></i> Login
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{% url 'reg' %}">
                             <i class="bi bi-person-plus"></i> Sign Up
                         </a>
                     </li>
@@ -145,7 +145,7 @@ h1::before {
                 <img src="{%static 'images/Technician.jpg'%}" class="d-block w-100" alt="Banner">
             </div>
             <div class="carousel-item">
-                <img src="Technician2.jpg" class="d-block w-100" alt="Second slide">
+                <img src="{%static 'images/Technician2.jpg'%}" class="d-block w-100" alt="Second slide">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#serviceCarousel" data-bs-slide="prev">
@@ -163,25 +163,25 @@ h1::before {
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="service-box">
-                    <img src="Download Electrician Carrying an Electric Plug Front View Retro for free.jpg" alt="Electrical">
+                    <img src="{%static 'images/Download Electrician Carrying an Electric Plug Front View Retro for free.jpg'%}" alt="Electrical">
                     <h5>Electrical</h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="service-box">
-                    <img src="Gas pipeline icon.jpg" alt="Plumbing">
+                    <img src="" alt="Plumbing">
                     <h5>Plumbing</h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="service-box">
-                    <img src="Art Painting Roller icons for free download _ Freepik.jpg" alt="Painting">
+                    <img src="{static 'images/Art Painting Roller icons for free download _ Freepik.jpg'%}" alt="Painting">
                     <h5>Painting</h5>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="service-box">
-                    <img src="Home renovation icon vector outline thin border clipart png.jpg" alt="AC Repair">
+                    <img src="{% static 'images/Home renovation icon vector outline thin border clipart png.jpg' %}" alt="AC Repair">
                     <h5>House Renovation</h5>
                 </div>
             </div>

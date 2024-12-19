@@ -7,3 +7,7 @@ def reg(request):
 
 def home(request):
     return render(request,'home.html')
+
+def login(request):
+    return render(request,'user_auth_page/login.html')
+    
